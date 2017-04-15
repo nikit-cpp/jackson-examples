@@ -7,9 +7,9 @@ import java.util.Collection;
  */
 public class ClassWithoutDefaultConstructor {
     private String string;
-    private Collection<AbstractAnimal> animals;
+    private Collection<Animal> animals;
 
-    public ClassWithoutDefaultConstructor(String string, Collection<AbstractAnimal> animals) {
+    public ClassWithoutDefaultConstructor(String string, Collection<Animal> animals) {
         this.string = string;
         this.animals = animals;
     }
@@ -22,11 +22,11 @@ public class ClassWithoutDefaultConstructor {
         this.string = string;
     }*/
 
-    public Collection<AbstractAnimal> getAnimals() {
+    public Collection<Animal> getAnimals() {
         return animals;
     }
 
-    public void setAnimals(Collection<AbstractAnimal> animals) {
+    public void setAnimals(Collection<Animal> animals) {
         this.animals = animals;
     }
 

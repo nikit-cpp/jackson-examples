@@ -2,10 +2,7 @@ package com.github.nikit.cpp.jackson;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.nikit.cpp.jackson.configuration.ThirdpartyModuleFactory;
-import com.github.nikit.cpp.jackson.thirdparty.AbstractAnimal;
-import com.github.nikit.cpp.jackson.thirdparty.AnimalCatWithoutDefaultConstructor;
-import com.github.nikit.cpp.jackson.thirdparty.AnimalDog;
-import com.github.nikit.cpp.jackson.thirdparty.ClassWithoutDefaultConstructor;
+import com.github.nikit.cpp.jackson.thirdparty.*;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -13,6 +10,7 @@ import java.util.Collection;
 
 /**
  * https://reachmnadeem.wordpress.com/2016/09/23/jackson-mixin-to-the-rescue/
+ * http://programmerbruce.blogspot.fr/2011/05/deserialize-json-with-jackson-into.html
  * Created by nik on 15.04.17.
  */
 public class JacksonMain
@@ -32,7 +30,7 @@ public class JacksonMain
 
         //objectMapper.addMixIn(ClassWithoutDefaultConstructor.class, ClassWithoutDefaultConstructorMixin.class);
 
-        Collection<AbstractAnimal> animals = Arrays.asList(new AnimalCatWithoutDefaultConstructor(1, "Tom"), new AnimalDog("Spike", 14.33));
+        Collection<Animal> animals = Arrays.asList(new AnimalCatWithoutDefaultConstructor(1, "Tom"), new AnimalDog("Spike", 14.33));
         ClassWithoutDefaultConstructor classWithoutDefaultConstructor = new ClassWithoutDefaultConstructor("ololo" ,animals);
 
         String out = objectMapper.writeValueAsString(classWithoutDefaultConstructor);

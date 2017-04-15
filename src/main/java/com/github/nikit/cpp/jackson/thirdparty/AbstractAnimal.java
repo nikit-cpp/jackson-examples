@@ -3,7 +3,7 @@ package com.github.nikit.cpp.jackson.thirdparty;
 /**
  * Created by nik on 15.04.17.
  */
-public abstract class AbstractAnimal {
+public abstract class AbstractAnimal implements Animal {
     private String name;
 
     public AbstractAnimal(String name) {
