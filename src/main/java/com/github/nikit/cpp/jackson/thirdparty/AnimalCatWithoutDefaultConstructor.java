@@ -3,12 +3,12 @@ package com.github.nikit.cpp.jackson.thirdparty;
 /**
  * Created by nik on 15.04.17.
  */
-public class AnimalCat extends AbstractAnimal {
+public class AnimalCatWithoutDefaultConstructor extends AbstractAnimal {
     private int weight;
 
-    //public AnimalCat() { }
+    //public AnimalCatWithoutDefaultConstructor() { }
 
-    public AnimalCat(int weight, String name) {
+    public AnimalCatWithoutDefaultConstructor(int weight, String name) {
         super(name);
         this.weight = weight;
     }
@@ -23,7 +23,7 @@ public class AnimalCat extends AbstractAnimal {
 
     @Override
     public String toString() {
-        return "AnimalCat{" +
+        return "AnimalCatWithoutDefaultConstructor{" +
                 "name=" + getName() +
                 ", weight=" + weight +
                 '}';

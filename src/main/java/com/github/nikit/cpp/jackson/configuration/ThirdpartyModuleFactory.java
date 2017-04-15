@@ -3,7 +3,7 @@ package com.github.nikit.cpp.jackson.configuration;
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.github.nikit.cpp.jackson.thirdparty.AbstractAnimal;
-import com.github.nikit.cpp.jackson.thirdparty.AnimalCat;
+import com.github.nikit.cpp.jackson.thirdparty.AnimalCatWithoutDefaultConstructor;
 import com.github.nikit.cpp.jackson.thirdparty.ClassWithoutDefaultConstructor;
 
 /**
@@ -14,7 +14,7 @@ public class ThirdpartyModuleFactory {
         SimpleModule module = new SimpleModule();
         module.setMixInAnnotation(ClassWithoutDefaultConstructor.class, ClassWithoutDefaultConstructorMixin.class);
         module.setMixInAnnotation(AbstractAnimal.class, AbstractAnimalMixin.class);
-        module.setMixInAnnotation(AnimalCat.class, AnimalCatMixin.class);
+        module.setMixInAnnotation(AnimalCatWithoutDefaultConstructor.class, AnimalCatMixin.class);
         return module;
     }
 }

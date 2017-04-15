@@ -1,14 +1,9 @@
 package com.github.nikit.cpp.jackson;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.github.nikit.cpp.jackson.configuration.AbstractAnimalMixin;
-import com.github.nikit.cpp.jackson.configuration.AnimalCatMixin;
-import com.github.nikit.cpp.jackson.configuration.ClassWithoutDefaultConstructorMixin;
 import com.github.nikit.cpp.jackson.configuration.ThirdpartyModuleFactory;
 import com.github.nikit.cpp.jackson.thirdparty.AbstractAnimal;
-import com.github.nikit.cpp.jackson.thirdparty.AnimalCat;
+import com.github.nikit.cpp.jackson.thirdparty.AnimalCatWithoutDefaultConstructor;
 import com.github.nikit.cpp.jackson.thirdparty.AnimalDog;
 import com.github.nikit.cpp.jackson.thirdparty.ClassWithoutDefaultConstructor;
 
@@ -37,7 +32,7 @@ public class JacksonMain
 
         //objectMapper.addMixIn(ClassWithoutDefaultConstructor.class, ClassWithoutDefaultConstructorMixin.class);
 
-        Collection<AbstractAnimal> animals = Arrays.asList(new AnimalCat(1, "Tom"), new AnimalDog("Spike", 14.33));
+        Collection<AbstractAnimal> animals = Arrays.asList(new AnimalCatWithoutDefaultConstructor(1, "Tom"), new AnimalDog("Spike", 14.33));
         ClassWithoutDefaultConstructor classWithoutDefaultConstructor = new ClassWithoutDefaultConstructor("ololo" ,animals);
 
         String out = objectMapper.writeValueAsString(classWithoutDefaultConstructor);
