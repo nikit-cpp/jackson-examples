@@ -8,10 +8,12 @@ import java.util.Collection;
 public class ClassWithoutDefaultConstructor {
     private String string;
     private Collection<Animal> animals;
+    private Object principal;
 
-    public ClassWithoutDefaultConstructor(String string, Collection<Animal> animals) {
+    public ClassWithoutDefaultConstructor(String string, Collection<Animal> animals, Object principal) {
         this.string = string;
         this.animals = animals;
+        this.principal = principal;
     }
 
     public String getString() {
@@ -35,6 +37,15 @@ public class ClassWithoutDefaultConstructor {
         return "ClassWithoutDefaultConstructor{" +
                 "string='" + string + '\'' +
                 ", animals=" + animals +
+                ", principal=" + principal +
                 '}';
+    }
+
+    public Object getPrincipal() {
+        return principal;
+    }
+
+    public void setPrincipal(Object principal) {
+        this.principal = principal;
     }
 }

@@ -23,7 +23,8 @@ public abstract class ClassWithoutDefaultConstructorMixin {
     @JsonCreator
     public ClassWithoutDefaultConstructorMixin(
             @JsonProperty("string") String s,
-            @JsonProperty("animals") Collection<AbstractAnimal> animals
+            @JsonProperty("animals") Collection<AbstractAnimal> animals,
+            @JsonProperty("principal") Object principal
     ) {}
 
 }

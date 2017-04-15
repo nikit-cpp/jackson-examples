@@ -31,7 +31,8 @@ public class JacksonMain
         //objectMapper.addMixIn(ClassWithoutDefaultConstructor.class, ClassWithoutDefaultConstructorMixin.class);
 
         Collection<Animal> animals = Arrays.asList(new AnimalCatWithoutDefaultConstructor(1, "Tom"), new AnimalDog("Spike", 14.33));
-        ClassWithoutDefaultConstructor classWithoutDefaultConstructor = new ClassWithoutDefaultConstructor("ololo" ,animals);
+        Principal principal = new Principal("Name", "Surname");
+        ClassWithoutDefaultConstructor classWithoutDefaultConstructor = new ClassWithoutDefaultConstructor("ololo" ,animals, principal);
 
         String out = objectMapper.writeValueAsString(classWithoutDefaultConstructor);
         System.out.println("Serialized: " + out);
