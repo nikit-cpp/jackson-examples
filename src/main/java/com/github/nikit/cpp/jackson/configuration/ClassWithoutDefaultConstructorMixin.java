@@ -1,8 +1,9 @@
-package com.github.nikit.cpp.jackson;
+package com.github.nikit.cpp.jackson.configuration;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.nikit.cpp.jackson.thirdparty.AbstractAnimal;
 
 import java.util.Collection;
 

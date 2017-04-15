@@ -1,4 +1,4 @@
-package com.github.nikit.cpp.jackson;
+package com.github.nikit.cpp.jackson.thirdparty;
 
 import java.util.Collection;
 

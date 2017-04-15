@@ -1,7 +1,16 @@
 package com.github.nikit.cpp.jackson;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.github.nikit.cpp.jackson.configuration.AbstractAnimalMixin;
+import com.github.nikit.cpp.jackson.configuration.AnimalCatMixin;
+import com.github.nikit.cpp.jackson.configuration.ClassWithoutDefaultConstructorMixin;
+import com.github.nikit.cpp.jackson.configuration.ThirdpartyModuleFactory;
+import com.github.nikit.cpp.jackson.thirdparty.AbstractAnimal;
+import com.github.nikit.cpp.jackson.thirdparty.AnimalCat;
+import com.github.nikit.cpp.jackson.thirdparty.AnimalDog;
+import com.github.nikit.cpp.jackson.thirdparty.ClassWithoutDefaultConstructor;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -15,18 +24,16 @@ public class JacksonMain
 {
     public static void main(String[] args) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        /*objectMapper.setVisibility(objectMapper.getSerializationConfig()
+
+        /* not compiles in Jackson 2.1
+        objectMapper.setVisibility(objectMapper.getSerializationConfig()
                 .getDefaultVisibilityChecker()
                 .withFieldVisibility(JsonAutoDetect.Visibility.ANY)
                 .withGetterVisibility(JsonAutoDetect.Visibility.NONE)
                 .withSetterVisibility(JsonAutoDetect.Visibility.NONE)
                 .withCreatorVisibility(JsonAutoDetect.Visibility.NONE));*/
 
-        SimpleModule module = new SimpleModule();
-        module.setMixInAnnotation(ClassWithoutDefaultConstructor.class, ClassWithoutDefaultConstructorMixin.class);
-        module.setMixInAnnotation(AbstractAnimal.class, AbstractAnimalMixin.class);
-        module.setMixInAnnotation(AnimalCat.class, AnimalCatMixin.class);
-        objectMapper.registerModule(module);
+        objectMapper.registerModule(ThirdpartyModuleFactory.getThirdpartyJacksonModule());
 
         //objectMapper.addMixIn(ClassWithoutDefaultConstructor.class, ClassWithoutDefaultConstructorMixin.class);
 

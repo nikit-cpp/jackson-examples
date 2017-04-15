@@ -1,4 +1,4 @@
-package com.github.nikit.cpp.jackson;
+package com.github.nikit.cpp.jackson.thirdparty;
 
 /**
  * Created by nik on 15.04.17.
