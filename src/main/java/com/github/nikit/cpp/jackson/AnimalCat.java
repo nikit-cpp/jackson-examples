@@ -3,10 +3,10 @@ package com.github.nikit.cpp.jackson;
 /**
  * Created by nik on 15.04.17.
  */
-public class AnimalCat  extends AbstractAnimal{
+public class AnimalCat extends AbstractAnimal {
     private int weight;
 
-    public AnimalCat() { }
+    //public AnimalCat() { }
 
     public AnimalCat(int weight, String name) {
         super(name);

@@ -25,6 +25,7 @@ public class JacksonMain
         SimpleModule module = new SimpleModule();
         module.setMixInAnnotation(ClassWithoutDefaultConstructor.class, ClassWithoutDefaultConstructorMixin.class);
         module.setMixInAnnotation(AbstractAnimal.class, AbstractAnimalMixin.class);
+        module.setMixInAnnotation(AnimalCat.class, AnimalCatMixin.class);
         objectMapper.registerModule(module);
 
         //objectMapper.addMixIn(ClassWithoutDefaultConstructor.class, ClassWithoutDefaultConstructorMixin.class);

@@ -18,9 +18,9 @@ public class ClassWithoutDefaultConstructor {
         return string;
     }
 
-    public void setString(String string) {
+    /*public void setString(String string) {
         this.string = string;
-    }
+    }*/
 
     public Collection<AbstractAnimal> getAnimals() {
         return animals;
